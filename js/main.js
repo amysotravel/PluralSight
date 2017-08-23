@@ -48,15 +48,15 @@ var xhr = new XMLHttpRequest();
 
 xhr.open('GET','data.json',true);
 xhr.responseType = 'text';
-xhr.send();
 
-xhr.onreadystatechange = function() {
+
+// xhr.onreadystatechange = function() {
 	
-	console.log(xhr.readyState);
-	console.log(xhr.status);
-	console.log(xhr.statusText);
+// 	console.log(xhr.readyState);
+// 	console.log(xhr.status);
+// 	console.log(xhr.statusText);
 	
-	}; //end function
+// 	}; //end function
 	
 	
 	xhr.onload = function (){
@@ -66,4 +66,6 @@ xhr.onreadystatechange = function() {
 		} // end if
 		}; // end function
 
+
+xhr.send();
 
