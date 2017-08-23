@@ -56,13 +56,14 @@ xhr.onreadystatechange = function() {
 	console.log(xhr.status);
 	console.log(xhr.statusText);
 	
-	} //end function
+	}; //end function
 	
 	
 	xhr.onload = function (){
+		if(xhr.status===200){ 
 		var myStuff = JSON.parse(xhr.responseText);
 		console.log(myStuff);
-		
-		}
+		} // end if
+		}; // end function
 
 
