@@ -1,7 +1,1 @@
-// JSON Document
-
-{
-	"first": "George",
-	"last": "Washington",
-	"served": "1789"
-}
+{"Jane":{"age":"29","degree":{"AAS":"VMI","BA":"UVA"}}, "Jim":{"age":"49","degree":"MA"}}
