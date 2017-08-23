@@ -53,6 +53,7 @@ xhr.send();
 xhr.onreadystatechange = function() {
 	
 	console.log(xhr.readyState);
+	console.log(xhr.status);
 	
 	} //end function
 
