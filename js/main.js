@@ -1,26 +1,50 @@
-// JavaScript Document
-var hotelInfo;
-var details;
-var xhr = new XMLHttpRequest();
-xhr.open('GET', "data.json", true);
-xhr.responseType = 'text';
-xhr.send();
+/*jslint browser:true */
+'use strict';
+
+var weatherConditions = new XMLHttpRequest();
+var weatherForecast = new XMLHttpRequest();
+var cObj;
+var fObj;
+
+// GET THE CONDITIONS
+weatherConditions.open('GET', 'https://api.wunderground.com/api/d60ccdba880309bb/conditions/q/84062.json', true);
+weatherConditions.responseType = 'text';
+weatherConditions.send(null);
+
+weatherConditions.onload = function() {
+    if (weatherConditions.status === 200){
+        cObj = JSON.parse(weatherConditions.responseText); 
+        console.log(cObj);
+document.getElementById('location').innerHTML = cObj.current_observation.display_location.full;
+document.getElementById('weather').innerHTML = cObj.current_observation.weather;
+document.getElementById('temperature').innerHTML = cObj.current_observation.temp_f;
+
+    } //end if
+}; //end function
 
 
-xhr.onload = function() {
-    if(xhr.status === 200) {
-        hotelInfo = JSON.parse(xhr.responseText);
-        console.log(hotelInfo);
-  
-    } // end if
-} // end function
 
-function display(x){
-	console.log(x);
-	document.getElementById('roomName').innerHTML = hotelInfo[x].name;
-	document.getElementById('desc').innerHTML = hotelInfo[x].description;
-	document.getElementById('photo').src = hotelInfo[x].photo;
+
+
+
+
+
+
+
+// GET THE FORECARST
+weatherForecast.open('GET', 'https://api.wunderground.com/api/d60ccdba880309bb/forecast/q/84062.json', true);
+weatherForecast.responseType = 'text'; 
+weatherForecast.send();
+
+weatherForecast.onload = function() {
+if (weatherForecast.status === 200){
+	fObj = JSON.parse(weatherForecast.responseText);
+	console.log(fObj);
 	
-	document.getElementById('weekday').innerHTML = hotelInfo[x].cost.weekday;
-	document.getElementById('weekend').innerHTML = hotelInfo[x].cost.weekend;
-}//end function
+	document.getElementById('desc').innerHTML = fObj.forecast.txt_forecast.forecastday[0].fcttext;
+
+	
+} //end if
+}; //end function
+
+
