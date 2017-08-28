@@ -41,7 +41,7 @@ if (weatherForecast.status === 200){
 	fObj = JSON.parse(weatherForecast.responseText);
 	console.log(fObj);
 	
-	document.getElementById('temperature').innerHTML = fObj.current_observation.temp_f;
+
 	
 } //end if
 }; //end function
