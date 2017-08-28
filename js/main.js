@@ -11,6 +11,9 @@ xhr.onload = function() {
         var myStuff = JSON.parse(xhr.responseText);
         console.log(myStuff);
         
+		for(i=0; i<myStuff.presidents.length;i++){
+			console.log(myStuff.presidents[i].first);
+		}//end loop
     
     } // end if
 } // end function
