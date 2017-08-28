@@ -23,4 +23,13 @@ function display(x){
 	
 	document.getElementById('weekday').innerHTML = hotelInfo[x].cost.weekday;
 	document.getElementById('weekend').innerHTML = hotelInfo[x].cost.weekend;
+	
+	details = "";
+	for (i=0;i<hotelInfo[x].details.length;i++){
+		console.log(hotelInfo[x].details[i]);
+		details+=hotelInfo[x].details[i];
+	}//end loop
+	document.getElementById('details').innerHTML = details;
+	
+	
 }//end function
