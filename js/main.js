@@ -13,6 +13,7 @@ xhr.onload = function() {
         
 		for(i=0; i<myStuff.presidents.length;i++){
 			console.log(myStuff.presidents[i].first);
+					console.log(myStuff.presidents[i].last);
 		}//end loop
     
     } // end if
