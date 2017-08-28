@@ -1,7 +1,7 @@
 // JavaScript Document
 
 var xhr = XMLHttpRequest();
-xhr.open('GET, "data.JSON", true);
+xhr.open('GET', "data.JSON", true);
 xhr.responseType = 'text';
 xhr.send();
 
