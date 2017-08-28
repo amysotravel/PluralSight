@@ -14,3 +14,13 @@ xhr.onload = function() {
   
     } // end if
 } // end function
+
+function display(x){
+	console.log(x);
+	document.getElementById('roomName').innerHTML = hotelInfo[x].name;
+	document.getElementById('desc').innerHTML = hotelInfo[x].description;
+	document.getElementById('photo').src = hotelInfo[x].photo;
+	
+	document.getElementById('weekday').innerHTML = hotelInfo[x].cost.weekday;
+	document.getElementById('weekend').innerHTML = hotelInfo[x].cost.weekend;
+}//end function
