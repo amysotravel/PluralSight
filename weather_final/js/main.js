@@ -16,6 +16,8 @@ weatherConditions.onload = function() {
         cObj = JSON.parse(weatherConditions.responseText); 
         console.log(cObj);
 document.getElementById('location').innerHTML = cObj.current_observation.display_location.full;
+document.getElementById('weather').innerHTML = cObj..current_observation.weather;
+document.getElementById('temperature').innerHTML = cObj..current_observation.temp_f;
 
     } //end if
 }; //end function
