@@ -27,7 +27,7 @@ function display(x){
 	details = "";
 	for (i=0;i<hotelInfo[x].details.length;i++){
 	console.log(hotelInfo[x].details[i]);
-	details += "<p>"hotelInfo[x].details[i]"</p>";
+	details += "<p>"+hotelInfo[x].details[i]+"</p>";
 	}//end loop
 document.getElementById('details').innerHTML = details;
 	
