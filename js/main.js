@@ -48,7 +48,8 @@ if (weatherForecast.status === 200){
 	document.getElementById('r1c3').innerHTML = fObj.forecast.simpleforecast.forecastday[1].high.fahrenheit+"°";
 	document.getElementById('r1c4').innerHTML = fObj.forecast.simpleforecast.forecastday[1].low.fahrenheit+"°";
 	
-//	var imagePath = fobj..forecast.simpleforecast.forecastday[1].icon_url;
+	var imagePath = fObj.forecast.simpleforecast.forecastday[1].icon_url;
+	document.getElementById('r1c2').src = imagePath;
 	
 } //end if
 }; //end function
