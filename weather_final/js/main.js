@@ -7,7 +7,7 @@ var cObj;
 var fObj;
 
 // GET THE CONDITIONS
-weatherConditions.open('GET', 'http://api.wunderground.com/api/d60ccdba880309bb/conditions/q/84062.json', true);
+weatherConditions.open('GET', 'https://api.wunderground.com/api/d60ccdba880309bb/conditions/q/84062.json', true);
 weatherConditions.responseType = 'text';
 weatherConditions.send(null);
 
@@ -32,7 +32,7 @@ document.getElementById('temperature').innerHTML = cObj.current_observation.temp
 
 
 // GET THE FORECARST
-weatherForecast.open('GET', 'http://api.wunderground.com/api/d60ccdba880309bb/forecast/q/84062.json', true);
+weatherForecast.open('GET', 'https://api.wunderground.com/api/d60ccdba880309bb/forecast/q/84062.json', true);
 weatherForecast.responseType = 'text'; 
 weatherForecast.send();
 
@@ -43,6 +43,12 @@ if (weatherForecast.status === 200){
 	
 	document.getElementById('desc').innerHTML = fObj.forecast.txt_forecast.forecastday[0].fcttext;
 
+	
+	document.getElementById('r1c1').innerHTML = fObj.forecast.simpleforecast.forecastday[1].date.weekday;
+	document.getElementById('r1c3').innerHTML = fObj.forecast.simpleforecast.forecastday[1].high.fahrenheit+"°";
+	document.getElementById('r1c4').innerHTML = fObj.forecast.simpleforecast.forecastday[1].low.fahrenheit+"°";
+	
+	var imagePath = fobj..forecast.simpleforecast.forecastday[1].icon_url;
 	
 } //end if
 }; //end function
