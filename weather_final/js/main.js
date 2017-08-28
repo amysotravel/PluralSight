@@ -7,7 +7,7 @@ var cObj;
 var fObj;
 
 // GET THE CONDITIONS
-weatherConditions.open('', '', true);
+weatherConditions.open('GET', 'http://api.wunderground.com/api/d60ccdba880309bb/conditions/q/84062.json', true);
 weatherConditions.responseType = 'text';
 weatherConditions.send(null);
 
@@ -15,7 +15,7 @@ weatherConditions.onload = function() {
     if (weatherConditions.status === 200){
         cObj = JSON.parse(weatherConditions.responseText); 
         console.log(cObj);
-
+document.getElementById('location').innerHTML = cObj.current_observation.display_location.full;
 
     } //end if
 }; //end function
@@ -30,7 +30,7 @@ weatherConditions.onload = function() {
 
 
 // GET THE FORECARST
-weatherForecast.open('', '', true);
+weatherForecast.open('GET', 'http://api.wunderground.com/api/d60ccdba880309bb/forecast/q/84062.json', true);
 weatherForecast.responseType = 'text'; 
 weatherForecast.send();
 
