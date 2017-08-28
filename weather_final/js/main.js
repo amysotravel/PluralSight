@@ -41,6 +41,7 @@ if (weatherForecast.status === 200){
 	fObj = JSON.parse(weatherForecast.responseText);
 	console.log(fObj);
 	
+	document.getElementById('desc').innerHTML = fObj.forecast.txt_forecast.forecastday[0].fcttext;
 
 	
 } //end if
